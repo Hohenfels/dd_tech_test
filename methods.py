@@ -7,6 +7,22 @@ def get_nb_articles(element):
     else:
         exit("The element you requested doesn't work or is unavaible")
 
+def get_url(element):
+    data = element.find("a", {"target": "_top"})
+    return data.get('href')
+
+def get_desc(element):
+    data = element.find_all("a", {"target": "_top"})
+    return data[2].text
+
+def get_price(element):
+    data = element.find("span", {"class": "important"})
+    return data.text
+
 def scrap_it(element):
-    url = element.find("a", {"target": "_top"})
+    url = get_url(element)
     print(url)
+    desc = get_desc(element)
+    print(desc)
+    price = get_price(element)
+    print(price)
