@@ -48,8 +48,13 @@ while True:
     soup = BeautifulSoup(request.content, "html.parser")
     articles = soup.find_all("div", {"class": "dui-card searchresultitem"})
     for article in articles:
-        article_url = soup.find("a", {"class": "_top"})
-        print (article_url)
-    if i == 2:
+        print("================================================================================================================")
+        scrap_it(article)
+        print("================================================================================================================")
+        break
+    # for article in articles:
+    #     article_url = soup.find("a", {"class": "_top"})
+    #     print (article_url)
+    if i == 1:
         break
     i += 1
