@@ -22,13 +22,14 @@ brand_formatted = brand_to_search.replace(" ", "+") # Replacing all the space wi
 #
 # example : https://search.rakuten.co.jp/search/mall/Gucci+handbags/?p=42
 
-final_url = website + brand_formatted + "+handbags/?p=82"
+final_url = website + brand_formatted + "+handbags/?p=1"
 
 # Doing a simple request with the final URL and getting the content with BS, that, a first time to get the number of articles for the actual request
 
 request = requests.get(final_url)
-page = request.content
 soup = BeautifulSoup(request.content, "html.parser")
+
+articles = soup.find_all("div", {"class": "dui-card searchresultitem"})
 
 # Retrieving number of articles with the method get_nb_articles and dividing it by 45 (number of article per page) the maximum is 150
 
@@ -42,13 +43,13 @@ if nb_articles > 150:
 
 i = 1
 while True:
-    final_url = website + brand_formatted + "handbags/?p=" + str(i)
+    final_url = website + brand_formatted + "+handbags/?p=" + str(i)
     request = requests.get(final_url)
     soup = BeautifulSoup(request.content, "html.parser")
     articles = soup.find_all("div", {"class": "dui-card searchresultitem"})
     for article in articles:
-        article_url = article.find("a", {"class": "_top"})
-        print(article)
+        article_url = soup.find("a", {"class": "_top"})
+        print (article_url)
     if i == 2:
         break
     i += 1
