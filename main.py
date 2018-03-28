@@ -17,9 +17,9 @@ def main():
     brand_formatted = brand_to_search.replace(" ", "+") # Replacing all the space with '+' to imitate rakuten.co.jp url style
 
     # The final url is divided in 3 parts :
-#                                           - 'website' (https://search.rakuten.co.jp/search/mall/)
-#                                           - 'brand name' (equal to the input of the user)
-#                                           - '+handbag/?p=1' to only search for handbags and '?p=1' to start at page one
+    #                                       - 'website' (https://search.rakuten.co.jp/search/mall/)
+    #                                       - 'brand name' (equal to the input of the user)
+    #                                       - '+handbag/?p=1' to only search for handbags and '?p=1' to start at page one
     #
     # example : https://search.rakuten.co.jp/search/mall/Gucci+handbags/?p=42
 
