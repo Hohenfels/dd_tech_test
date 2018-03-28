@@ -10,13 +10,14 @@ from bs4 import BeautifulSoup
 def main():
     website = "https://search.rakuten.co.jp/search/mall/"
 
-    brand_to_search = input("What brand would you like to scrap on Rakuten.co.jp ?\n")
+    print("What brand would you like to scrap on Rakuten.co.jp ?")
+    brand_to_search = raw_input()
     brand_formatted = brand_to_search.replace(" ", "+") # Replacing all the space with '+' to imitate rakuten.co.jp url style
 
     # The final url is divided in 3 parts :
-    #                                           - 'website' (https://search.rakuten.co.jp/search/mall/)
-    #                                           - 'brand name' (equal to the input of the user)
-    #                                           - '+handbag/?p=1' to only search for handbags and '?p=1' to start at page one
+#                                           - 'website' (https://search.rakuten.co.jp/search/mall/)
+#                                           - 'brand name' (equal to the input of the user)
+#                                           - '+handbag/?p=1' to only search for handbags and '?p=1' to start at page one
     #
     # example : https://search.rakuten.co.jp/search/mall/Gucci+handbags/?p=42
 
@@ -38,7 +39,8 @@ def main():
 
     # Now asking the user how much pages he wants to scrap
 
-    nb_page = input("How much page ? (max for " + brand_to_search + " is " + str(max_pages) + ")\n")
+    print("How much page ? (max for " + brand_to_search + " is " + str(max_pages) + ")")
+    nb_page = raw_input()
     nb_page = int(nb_page)
     if nb_page > max_pages:
         print("You entered a number of pages above the max page number\n\
