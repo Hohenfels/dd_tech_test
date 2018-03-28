@@ -13,7 +13,7 @@ def main():
     brand_to_search = input("What brand would you like to scrap on Rakuten.co.jp ?\n")
     brand_formatted = brand_to_search.replace(" ", "+") # Replacing all the space with '+' to imitate rakuten.co.jp url style
 
-    # The final url is divided in 3 parts :     
+    # The final url is divided in 3 parts :
     #                                           - 'website' (https://search.rakuten.co.jp/search/mall/)
     #                                           - 'brand name' (equal to the input of the user)
     #                                           - '+handbag/?p=1' to only search for handbags and '?p=1' to start at page one
@@ -22,7 +22,8 @@ def main():
 
     final_url = website + brand_formatted + "+handbags/?p=1"
 
-    # Doing a simple request with the final URL and getting the content with BS, that, a first time to get the number of articles for the actual request
+    # Doing a simple request with the final URL and getting the content with BS, that,
+    # a first time to get the number of articles for the actual request
 
     request = requests.get(final_url)
     soup = BeautifulSoup(request.content, "html.parser")
@@ -37,7 +38,7 @@ def main():
 
     # Now asking the user how much pages he wants to scrap
 
-    nb_page = input("How much page ? (max for " + brand_to_search +" is " + str(max_pages) + ")\n")
+    nb_page = input("How much page ? (max for " + brand_to_search + " is " + str(max_pages) + ")\n")
     nb_page = int(nb_page)
     if nb_page > max_pages:
         print("You entered a number of pages above the max page number\n\
