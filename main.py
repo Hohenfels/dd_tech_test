@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# coding=utf_8
+
 import requests
 import math
 from methods import scrap_it, get_nb_articles, write_to_csv
