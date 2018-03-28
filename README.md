@@ -72,3 +72,5 @@ if nb_page > max_pages:
 To run the program make sure you've launched the install.sh by doing "sh install.sh" on unix system or "pip install beautifulsoup4 requests", it is gonna install the dependencies to make the program works.
 
 It is gonna install BeautifulSoup 4 and requests.
+
+Then start the program with "python main.py"
