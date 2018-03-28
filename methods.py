@@ -38,22 +38,16 @@ def write_to_csv(table, brand):
     brand = brand.replace(" ", "_").lower()
     file_path = "csv/" + brand + ".csv"
 
-    j = len(table)
-    i = 0
     if os.path.isfile(file_path) is False:
         open(file_path, 'a').close()
-    with open(file_path, "w", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        while i < j:
-            writer.writerow((
-                table["UR"] + '\n',
-                table["DC"] + '\n',
-                table["PR"] + '\n',
-                table["PU"] + '\n',
-                table["SN"] + '\n',
-                table["SU"] + '\n'
-                ))
-            i += 1
+    with open(file_path, "w", encoding = "utf-8") as file:
+        writer = csv.writer(file, delimiter = " ")
+        writer.writerow(table["UR"])
+        writer.writerow(table["DC"])
+        writer.writerow(table["PR"])
+        writer.writerow(table["PU"])
+        writer.writerow(table["SN"])
+        writer.writerow(table["SU"])
     file.close()
         
 def scrap_it(element):
