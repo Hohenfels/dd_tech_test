@@ -7,7 +7,7 @@ def get_nb_articles(element):
     if regex_match:
         return int(regex_match.group(1).replace(',', ''))
     else:
-        exit("The element you requested doesn't work or is unavaible")
+        exit("The element you requested doesn't work or is unavailable")
 
 def get_url(element):
 
