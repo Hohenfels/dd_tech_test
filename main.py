@@ -59,7 +59,6 @@ def main():
         for article in articles:
             table = scrap_it(article)
             write_to_csv(table, brand_to_search)
-            table = None
         if i == nb_page:
             break
         i += 1
