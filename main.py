@@ -1,13 +1,12 @@
-import os, sys
-import csv
 import requests
 import math
 from methods import scrap_it, get_nb_articles, write_to_csv
 from bs4 import BeautifulSoup
 
-# First of all, make sure you have installed BeautifulSoup and reauests (see the README.txt), thank you ! Felicien RENAUD @ 42
+# First of all, make sure you have installed BeautifulSoup and requests (see the README), thank you ! Felicien RENAUD @ 42
 
 # I made this technical test to be generic, so you can search any brand on Rakuten.co.jp
+
 def main():
     website = "https://search.rakuten.co.jp/search/mall/"
 
@@ -48,7 +47,8 @@ def main():
     # Here is the big part, a big loop that's gonna retrieve every articles from N page(s)
     # I begin to find all the article with soup.find_all according to the right div
     # I do a for loop to get inside every div and begin the extraction of data
-    # then I write my data to a .csv file with the name of the brand requested
+    # then I write my data to  .csv files with the name of the brand requested + an auto-generated unique ID
+    # All of the csv files will be in a folder created (if not exists) with the name of the brand requested
 
     i = 1
     while True:
@@ -62,6 +62,5 @@ def main():
         if i == nb_page:
             break
         i += 1
-
 if __name__ == "__main__":
     main()
