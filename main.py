@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import requests
 import math
 from methods import scrap_it, get_nb_articles, write_to_csv
@@ -10,8 +11,7 @@ from bs4 import BeautifulSoup
 def main():
     website = "https://search.rakuten.co.jp/search/mall/"
 
-    print("What brand would you like to scrap on Rakuten.co.jp ?")
-    brand_to_search = raw_input()
+    brand_to_search = input("What brand would you like to scrap on Rakuten.co.jp ? ")
     brand_formatted = brand_to_search.replace(" ", "+") # Replacing all the space with '+' to imitate rakuten.co.jp url style
 
     # The final url is divided in 3 parts :
@@ -39,8 +39,8 @@ def main():
 
     # Now asking the user how much pages he wants to scrap
 
-    print("How much page ? (max for " + brand_to_search + " is " + str(max_pages) + ")")
-    nb_page = raw_input()
+
+    nb_page = input("How much page ? (max for " + brand_to_search + " is " + str(max_pages) + ") ")
     nb_page = int(nb_page)
     if nb_page > max_pages:
         print("You entered a number of pages above the max page number\n\
