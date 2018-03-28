@@ -58,6 +58,7 @@ def main():
         articles = soup.find_all("div", {"class": "dui-card searchresultitem"})
         for article in articles:
             table = scrap_it(article)
+            print(table)
             write_to_csv(table, brand_to_search)
         if i == nb_page:
             break

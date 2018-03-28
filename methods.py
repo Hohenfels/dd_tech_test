@@ -54,7 +54,6 @@ def write_to_csv(table, brand):
                 table["SU"] + '\n'
                 ))
             i += 1
-        writer.writerow("====================")
     file.close()
         
 def scrap_it(element):
