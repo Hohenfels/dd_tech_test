@@ -14,7 +14,7 @@ def main():
     website = "https://search.rakuten.co.jp/search/mall/"
 
     brand_to_search = input("What brand would you like to scrap on Rakuten.co.jp ? ")
-    brand_formatted = brand_to_search.replace(" ", "") # Replacing all the space with '+' to imitate rakuten.co.jp url style
+    brand_formatted = brand_to_search.replace(" ", "")
 
     # The final url is divided in 3 parts :
     #                                       - 'website' (https://search.rakuten.co.jp/search/mall/)
