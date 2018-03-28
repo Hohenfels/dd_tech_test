@@ -78,3 +78,5 @@ Then start the program with "python main.py"
 IMPORTANT : Parfois une recherche ne fonctionnera pas, j'ai testé tout mercredi au moins les recherches
 dans la consigne et jamais aucun soucis, en revanche mercredi soir en refaisant des tests pour etre sur, Louis Vuitton ne fonctionnait pas ni les recherches en dehors de la consigne (Dior, Chloe, etc ...)
 Je n'ai pas trouvé de raison a ça, cela provient d'un regex qui me sert a trouver le nombre d'article, et qui doit donc est different meme si pourtant le h1 reste le meme ...
+A savoir que j'ai codé sous Windows, j'ai testé sous UNIX et Windows et aucun soucis dans la journée
+Voila, voila, merci de votre comprehension !
